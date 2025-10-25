@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import Global from "../Global";
+import champions from "../assets/images/champions.png";
 
 export default class Menu extends Component {
     state = {
@@ -26,7 +27,7 @@ export default class Menu extends Component {
             <div>
                 <nav className="navbar navbar-expand-lg bg-body-tertiary">
                     <div className="container-fluid">
-                        <p className="navbar-brand">Menu</p>
+                        <img alt="logo" src={champions} style={{ width: "50px" }} className="navbar-brand" />
                         <button
                             className="navbar-toggler"
                             type="button"
@@ -45,14 +46,14 @@ export default class Menu extends Component {
                                     </NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" to="/">
+                                    <NavLink className="nav-link" to="/apuestas">
                                         Apuestas
                                     </NavLink>
                                 </li>
                                 <li className="nav-item dropdown">
-                                    <NavLink className="nav-link dropdown-toggle" to="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <p className="nav-link dropdown-toggle" to="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         Equipos
-                                    </NavLink>
+                                    </p>
                                     <ul className="dropdown-menu">
                                         {this.state.equipos &&
                                             this.state.equipos.map((equipo, index) => {
